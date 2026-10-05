@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <div
+      class="control d-flex justify-content-center align-items-center"
+      style="width: 100%; height: 100vh"
+    >
+     
+      <div class="control-table d-flex flex-column">
+        <h1 class="text-center">Student List</h1>
+        <div class="search d-flex justify-content-between">
+            <input class="search-input form-control" type="text" placeholder="search Student" style="width: 200px;">
+        <button style="width: 140px;" class="addStudent btn btn-success">+Add Student</button>
+        </div>
+        <table class="table table-bordered mt-3" style="width: 500px">
+          <tr class="table-dark">
+            <th>Username</th>
+            <th>Email</th>
+            <th>Password</th>
+            <th>Phone</th>
+            <th>Gender</th>
+            <th>Action</th>
+          </tr>
+          <tbody class="table-data">
+           
+             
+           
+          </tbody>
+        </table>
+      </div>
+
+      <form
+        class="form-input shadow bg-white position-absolute rounded-2 p-3 d-none"
+        style="width: 350px; height: 480px"
+      >
+        <h5 class="text-center">Add Student</h5>
+        <label class="mt-2" for="">Username</label>
+        <input
+          type="text"
+          class="username form-control mt-2"
+          placeholder="Enter Username"
+        />
+        <label class="mt-2" for="">Email</label>
+        <input
+          type="email"
+          class="email form-control mt-2"
+          placeholder="Enter Email"
+        />
+        <label class="mt-2" for="">Password</label>
+        <input
+          type="password"
+          class="password form-control mt-2"
+          placeholder="Enter Password"
+        />
+        <label class="mt-2" for="">Phone number</label>
+        <input
+          type="number"
+          class="phone form-control mt-2"
+          placeholder="Enter phone"
+        />
+        <label for="">Select Gender</label>
+        <select class="form-select" name="" id="gender">
+          <option value="male">Male</option>
+          <option value="femal">Femal</option>
+        </select>
+        <div class="d-flex justify-content-end gap-3">
+          <button type="button"  onclick="closeForm()" class="btn btn-secondary mt-3">Cancel</button>
+          <button  class="btn saveStudent btn-primary w-50 mt-3">Save Student</button>
+        </div>
+      </form>
+    </div>
+   
+  </body>
+  <script src="Object.js"></script>
+</html>
