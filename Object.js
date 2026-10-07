@@ -8,6 +8,7 @@ const phone = document.querySelector(".phone");
 const gender = document.getElementById("gender");
 const tableData=document.querySelector('.table-data')
 const saveStudent=document.querySelector('.saveStudent')
+const profile=document.querySelector('.profile')
 
 userName.value="llvdmvsdmvsv"
 addStudent.addEventListener("click", () => {
@@ -32,14 +33,18 @@ searchInput.addEventListener("input", (e) => {
 });
 formInput.addEventListener("submit", (e) => {
   e.preventDefault();
+     let fileimg=profile.files[0];
+   let result=URL.createObjectURL(fileimg)
 
    let row=`
-       <tr  class="trData" >
+        <tr  class="trData" >
               <td >${userName.value}</td>
               <td >${email.value}</td>
               <td >${password.value}</td>
               <td>${phone.value}</td>
               <td>${gender.value}</td>
+              <td class=" rounded-circle" style="width:60px; height: 60px; " >
+                <img class="result-pf w-100 h-100 rounded-circle" src="${result}" alt=""></td>
               <td class="d-flex gap-2">
                  <button onclick="updateStudent(this)"  class="btn btn-warning">Update</button>
                  <button onclick="deleteData(this)" class="btn btn-danger">Delete</button>
@@ -48,6 +53,7 @@ formInput.addEventListener("submit", (e) => {
    `
    tableData.innerHTML=tableData.innerHTML+row;
   formInput.classList.add("d-none")
+ 
   formInput.reset()
   
 });
@@ -61,9 +67,6 @@ const deleteData=(button)=>{
 
 }
 const updateStudent=(button)=>{
-  
-
-  
   formInput.classList.remove('d-none')
   saveStudent.textContent="Update Student"
   saveStudent.classList.add("btn-warning")
