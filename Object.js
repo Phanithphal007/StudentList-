@@ -18,19 +18,7 @@ addStudent.addEventListener("click", () => {
 
 });
 const searchInput = document.querySelector(".search-input");
-searchInput.addEventListener("input", (e) => {
-  let inputValue = e.target.value.toLowerCase();
-  console.log(inputValue);
-  valueName.forEach((value) => {
-    let name = value.textContent.toLowerCase();
-    console.log(name);
-    if (name.includes(inputValue)) {
-      value.closest("tr").classList.remove("d-none");
-    } else {
-      value.closest("tr").classList.add("d-none");
-    }
-  });
-});
+ let re_us=[];
 formInput.addEventListener("submit", (e) => {
   e.preventDefault();
      let fileimg=profile.files[0];
@@ -51,11 +39,25 @@ formInput.addEventListener("submit", (e) => {
               </td>
             </tr>
    `
+  
+   re_us.push(userName.value);
    tableData.innerHTML=tableData.innerHTML+row;
+   
+
   formInput.classList.add("d-none")
- 
+
+
   formInput.reset()
   
+});
+console.log(re_us);
+searchInput.addEventListener("input", (e) => {
+  let inputValue = e.target.value.toLowerCase();
+ console.log(inputValue)
+let resultSearch=re_us.filter(()=>{
+   return inputValue==re_us;
+})
+console.log(resultSearch);
 });
 function closeForm(){
    formInput.classList.add("d-none")
